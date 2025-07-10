@@ -46,10 +46,14 @@ const About = () => {
             <div className="space-y-6">
               {/* Profile Image Placeholder */}
               <div className="w-64 h-64 mx-auto lg:mx-0 rounded-full bg-gradient-primary p-1">
-                <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                  <div className="text-6xl font-bold gradient-text">RP</div>
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <img 
+                    src="https://res.cloudinary.com/dtjjgiitl/image/upload/q_auto:good,f_auto,fl_progressive/v1752093310/tiiormgyj4triiplcpgq.jpg" 
+                    alt="Rajaveer Patil"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </div>
+              </div> 
 
               {/* Tech Icons */}
               <div className="flex flex-wrap gap-2 justify-center lg:justify-start">

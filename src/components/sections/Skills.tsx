@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Scene3D } from '@/components/3d/Scene3D';
+import { InteractiveSkillSphere } from '@/components/3d/InteractiveSkillSphere';
 
 const Skills = () => {
   const skillCategories = [
@@ -79,7 +81,57 @@ const Skills = () => {
             ))}
           </div>
 
-          {/* Technical Proficiency */}
+          {/* 3D Interactive Skills Visualization */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-center mb-8 text-primary">
+              Interactive Skills Universe
+            </h3>
+            <p className="text-center text-muted-foreground mb-8">
+              Click and drag to explore • Hover over spheres to see animations • Click spheres to see proficiency
+            </p>
+            <div className="h-96 rounded-lg bg-gradient-to-br from-background to-muted border">
+              <Scene3D cameraPosition={[0, 0, 6]} enableControls={true}>
+                <InteractiveSkillSphere 
+                  position={[-2, 1, 0]} 
+                  skill="Frontend Dev" 
+                  color="#61dafb" 
+                  proficiency={0.9} 
+                />
+                <InteractiveSkillSphere 
+                  position={[2, 1, 0]} 
+                  skill="Backend Dev" 
+                  color="#68d391" 
+                  proficiency={0.85} 
+                />
+                <InteractiveSkillSphere 
+                  position={[0, -1, 1]} 
+                  skill="Mobile Dev" 
+                  color="#4299e1" 
+                  proficiency={0.88} 
+                />
+                <InteractiveSkillSphere 
+                  position={[-1.5, -1, -1]} 
+                  skill="AI/ML" 
+                  color="#ed8936" 
+                  proficiency={0.82} 
+                />
+                <InteractiveSkillSphere 
+                  position={[1.5, 0, -1]} 
+                  skill="Cloud" 
+                  color="#9f7aea" 
+                  proficiency={0.78} 
+                />
+                <InteractiveSkillSphere 
+                  position={[0, 2, -0.5]} 
+                  skill="DevOps" 
+                  color="#f56565" 
+                  proficiency={0.75} 
+                />
+              </Scene3D>
+            </div>
+          </div>
+
+          {/* Traditional Technical Proficiency */}
           <div className="mt-16">
             <h3 className="text-2xl font-bold text-center mb-8 text-primary">
               Technical Proficiency

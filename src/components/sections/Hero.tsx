@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, File } from 'lucide-react';
+import { Scene3D } from '@/components/3d/Scene3D';
+import { FloatingGeometry } from '@/components/3d/FloatingGeometry';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState('');
@@ -54,20 +56,16 @@ const Hero = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-secondary opacity-50"></div>
       
-      {/* Animated background particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
-            }}
-          />
-        ))}
+      {/* 3D Background Scene */}
+      <div className="absolute inset-0 opacity-40">
+        <Scene3D cameraPosition={[0, 0, 8]} enableControls={false}>
+          <FloatingGeometry position={[-3, 2, -2]} color="#6366f1" shape="sphere" />
+          <FloatingGeometry position={[3, -1, -1]} color="#8b5cf6" shape="torus" />
+          <FloatingGeometry position={[-2, -2, -3]} color="#06b6d4" shape="cone" />
+          <FloatingGeometry position={[2, 2, -2]} color="#10b981" shape="box" />
+          <FloatingGeometry position={[0, -3, -4]} color="#f59e0b" shape="sphere" />
+          <FloatingGeometry position={[-4, 0, -1]} color="#ef4444" shape="torus" />
+        </Scene3D>
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
@@ -116,7 +114,7 @@ const Hero = () => {
           <div className="flex justify-center space-x-6">
             <a
               href="https://github.com"
-              target="_blank"
+              target="https://github.com/Rajaveer4"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
             >
@@ -124,14 +122,14 @@ const Hero = () => {
             </a>
             <a
               href="https://linkedin.com"
-              target="_blank"
+              target="https://www.linkedin.com/in/rajaveer-patil-576993338"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
             >
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:rajaveer@example.com"
+              href="mailto:rajveer.patil.rr@gmail.com"
               className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
             >
               <Mail className="h-6 w-6" />

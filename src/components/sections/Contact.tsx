@@ -15,14 +15,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'rajaveer@example.com',
-      href: 'mailto:rajaveer@example.com'
+      value: 'rajveer.patil.rr@gmail.com',
+      href: 'mailto:rajveer.patil.rr@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210'
+      value: '+91 81691 56070',
+      href: 'tel:+918169156070'
     },
     {
       icon: MapPin,
@@ -36,19 +36,19 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/Rajaveer4',
       color: 'hover:text-gray-400'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://linkedin.com/in/rajaveer-patil-576993338',
       color: 'hover:text-blue-400'
     },
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:rajaveer@example.com',
+      href: 'mailto:rajveer.patil.rr@gmail.com',
       color: 'hover:text-red-400'
     }
   ];

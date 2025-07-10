@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Github, ExternalLink } from 'lucide-react';
+import { Scene3D } from '@/components/3d/Scene3D';
+import { ProjectCard3D } from '@/components/3d/ProjectCard3D';
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -137,7 +139,39 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Projects Grid */}
+          {/* 3D Projects Showcase */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center mb-8 text-primary">
+              3D Project Explorer
+            </h3>
+            <p className="text-center text-muted-foreground mb-8">
+              Interact with projects in 3D space • Click cards for details • Drag to explore
+            </p>
+            <div className="h-96 rounded-lg bg-gradient-to-br from-background to-muted border">
+              <Scene3D cameraPosition={[0, 0, 8]} enableControls={true}>
+                {filteredProjects.slice(0, 6).map((project, index) => {
+                  const positions: [number, number, number][] = [
+                    [-3, 1, 0], [0, 1, 0], [3, 1, 0],
+                    [-3, -1.5, 0], [0, -1.5, 0], [3, -1.5, 0]
+                  ];
+                  const colors = ['#6366f1', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444'];
+                  
+                  return (
+                    <ProjectCard3D
+                      key={project.id}
+                      position={positions[index] || [0, 0, 0]}
+                      title={project.title}
+                      description={project.description}
+                      technologies={project.tags}
+                      color={colors[index] || '#6366f1'}
+                    />
+                  );
+                })}
+              </Scene3D>
+            </div>
+          </div>
+
+          {/* Traditional Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
               <Card 
