@@ -68,72 +68,88 @@ const Hero = () => {
         </Scene3D>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* Greeting */}
-          <p className="text-lg text-muted-foreground mb-4 animate-fade-in">
-            Hi, I'm
-          </p>
-
-          {/* Name */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text animate-scale-in">
-            Rajaveer Patil
-          </h1>
-
-          {/* Role */}
-          <div className="text-xl md:text-2xl lg:text-3xl text-foreground mb-8">
-            <span>Developer | Problem Solver | Innovator</span>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          {/* Profile Image - New Addition */}
+          <div className="hidden md:flex justify-center md:justify-end">
+            <div className="w-64 h-64 rounded-full bg-gradient-primary p-1">
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <img 
+                  src="/profile-image.jpg" 
+                  alt="Rajaveer Patil"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
+          
+          {/* Text Content */}
+          <div className="text-center md:text-left">
+            {/* Greeting */}
+            <p className="text-lg text-muted-foreground mb-4 animate-fade-in">
+              Hi, I'm
+            </p>
 
-          {/* Typewriter effect */}
-          <div className="text-lg md:text-xl text-primary mb-12 h-8">
-            <span className="typewriter font-mono">{currentText}</span>
-          </div>
+            {/* Name */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text animate-scale-in">
+              Rajaveer Patil
+            </h1>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button
-              onClick={downloadResume}
-              className="glow-on-hover bg-gradient-primary text-primary-foreground hover:opacity-90"
-              size="lg"
-            >
-              <File className="mr-2 h-5 w-5" />
-              Download Resume
-            </Button>
-            <Button
-              onClick={scrollToProjects}
-              variant="outline"
-              size="lg"
-              className="glow-on-hover"
-            >
-              View Projects
-            </Button>
-          </div>
+            {/* Role */}
+            <div className="text-xl md:text-2xl lg:text-3xl text-foreground mb-8">
+              <span>Developer | Problem Solver | Innovator</span>
+            </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6">
-            <a
-              href="https://github.com"
-              target="https://github.com/Rajaveer4"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
-            >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="https://www.linkedin.com/in/rajaveer-patil-576993338"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a
-              href="mailto:rajveer.patil.rr@gmail.com"
-              className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
-            >
-              <Mail className="h-6 w-6" />
-            </a>
+            {/* Typewriter effect */}
+            <div className="text-lg md:text-xl text-primary mb-12 h-8">
+              <span className="typewriter font-mono">{currentText}</span>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mb-12">
+              <Button
+                onClick={downloadResume}
+                className="glow-on-hover bg-gradient-primary text-primary-foreground hover:opacity-90"
+                size="lg"
+              >
+                <File className="mr-2 h-5 w-5" />
+                Download Resume
+              </Button>
+              <Button
+                onClick={scrollToProjects}
+                variant="outline"
+                size="lg"
+                className="glow-on-hover"
+              >
+                View Projects
+              </Button>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex justify-center md:justify-start space-x-6">
+              <a
+                href="https://github.com"
+                target="https://github.com/Rajaveer4"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
+              >
+                <Github className="h-6 w-6" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="https://www.linkedin.com/in/rajaveer-patil-576993338"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
+              >
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a
+                href="mailto:rajveer.patil.rr@gmail.com"
+                className="p-3 rounded-full bg-card hover:bg-primary/10 transition-colors glow-on-hover"
+              >
+                <Mail className="h-6 w-6" />
+              </a>
+            </div>
           </div>
         </div>
 
